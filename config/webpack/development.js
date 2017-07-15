@@ -5,7 +5,12 @@ const sharedConfig = require('./shared.js')
 const { settings, output } = require('./configuration.js')
 
 module.exports = merge(sharedConfig, {
-  devtool: 'cheap-eval-source-map',
+    devtool: 'cheap-eval-source-map',
+
+    externals: {
+        "react": "React",
+        "react-dom": "ReactDOM"
+    },
 
   stats: {
     errorDetails: true
